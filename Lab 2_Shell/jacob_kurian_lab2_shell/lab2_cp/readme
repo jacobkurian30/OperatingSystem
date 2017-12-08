@@ -1,0 +1,73 @@
+NAME: userManual
+
+DESCRIPTION
+myShell is a simple shell that has some of the basic features of the Linux shell. This shell has input/output-redirection capabilities.
+Also user can do piping in this shell. There are eight built-in command available in this command. It includes cd, clear, dir, environ,
+echo, help, pause, quit. 
+
+BUIT-IN COMMANDS
+Built-commands like 'dir', 'help', 'environ' and echo work with output redirection. But none of the biuild-in function would able to do 
+the background process.
+
+		-cd: This command will change the directory. The user can change the folder by typing the folder name following the 'cd'
+		     command. Also user can go back to the parent directory by  typing 'cd ..'. Two dots means the parent directory. User
+		     can go to the home from any directory by typing 'cd ~' or just typing 'cd'. User can go to the root directory from
+		     any folder by typing 'cd /'. User can go to any directory by using the 'cd' command. The path name will be  updated 
+		     based on the directory that user choose. [cd] [pathName].
+
+		-clear: This command will clear the screen. User can also type 'clr' command as an alternative to clear the screen.
+
+		-dir: It will show the files and folder present in the directory that user passed. If user do not pass any directories it 
+		     will shows the name of the files and folders that present in the current folder. User can also use this function with
+		     input/output redirection. User can redirect the output this command to a text file.
+		     [command] <directories>
+		     [command] <directories> > [file Name]
+
+		-environ: It will list all the environment strings
+
+		-help: It will display the user manual using the more filter. The user manual has basic description for the user to use
+		 the shell.
+
+		-pause: It will pause the shell until user press 'Enter'.
+
+		-quit: It will quit the shell.
+
+INPUT/OUTPUT REDIRECTION
+		-Output Redirection: The user can redirect the output of a command to a text file. The command can be either a built-in or
+		 non built-in. The user can use this output redirection in few ways. If there is only one greater sign '>' and file name
+		 that user passed do not exist then user can create a new file and pass the output to that file. If the filename that user
+		 passed already exist then the existing file will truncate to length zero. And new output will write output will write over
+		 that file. If the user use two greater that sign '>>'. It will either create a new file it the file that user passed do
+		 not exist. Or it will append the output with the existing file.
+		 [command] > [file Name]
+		 [command] >> [file Name]
+
+		-Input Redirection: The user can pass input for a executable or a command from a text file. If a command need a input
+		 user can pass it by [command] < [file Name]. If the file that user passing doesn't exist user will get the error message.
+
+		-Input And Output Redirection: The user can pass input from a text file. And output of that command can be redirect into a
+		 new text file. The file that passing input to command line should exist. If it does not exist the user will get error
+		 message. Also if the user pass single greater than sign '>', the shell will create a new file or overwrite an existing file.
+		 If the user pass two greater than sign '>>', the shell will either create a new file it the file does not exist already. If
+		 the file already exist it will append the content to the existing file.
+		 [command] < [file name 1] > [file Name 2]
+		 [command] < [file name 1] >> [file Name 2]
+
+
+PIPING
+		 The user can execute two commands at the same time [command 1] | [command 2]. Also user can run executable files and
+		 non-built-in commands using piping.
+
+NON-BUILT COMMAND
+		 User can use all the regular non-built-in commands that Linux system supports.
+
+BACKGROUND OPERATION
+		 User can run a run background process in this shell. Background process will not work with redirection.
+		 [command] &
+PATH NAME
+		It shows the the current directory that user working. It will change if user go the different directories.
+
+BATCH FILE
+		User can pass a batch file with shell executable. If the batch file does not have the executable permission. The shell will 
+		change the permission and read the commands in the batch file. If the file does not exist it will print the error message.
+

@@ -1,0 +1,67 @@
+.TH userManual 1  "07 October 2016" "User-Manual for myShell"
+.SH NAME
+userManual
+
+.SH DESCRIPTION
+myShell is a simple shell that has some of the basic features of the Linux shell. This shell has input/output-redirection capabilities.
+Also user can do piping in this shell. There are eight built-in command available in this command. It includes cd, clear, dir, environ,
+echo, help, pause, quit.
+.SH BUILT-IN COMMANDS
+Built-commands like 'dir', 'help', 'environ' and echo work with output redirection. But none of the biuild-in function would able to do 
+the background process.
+.IP cd
+It will change the directory. The user can go to any directory or folder by passing the path with 'cd' command.
+ [command] <destination path>
+.IP clear
+It will clear the screen. User can also put the alternative command 'clr', it will also do same job as clear.
+.IP dir
+It will show the files and folder present in the directory that user passed. If user do not pass any directories it will shows the name
+of the files and folders that present in the current folder. User can also use this function with input/output redirection.
+ [command] <directory>
+ [command] <directory> > [file name]
+.IP help
+It will display the user manual using the more filter
+.IP pause
+It will pause the shell until user press 'Enter'
+.IP environ
+It will list all of the enivironment strings
+.IP quit
+It will quit the shell
+.SH INPUT/OUTPUT REDIRECTION
+There are two different types of input/output redirection possible in this shell.The user can either redirect the output of a command to a
+text file [command] > [file Name]. Or the user can take pass input for a program from a test file
+ [command] < [file Name].
+.IP OUTPUT_REDIRECTION
+The user can redirect the output of a command to a text file. Following is the proper to redirect the output [command] > [text file name].
+There are two possible way to redirect the output. If the user put single greater than '>' sign then it will create a new text file if the
+file don't exist already. If he file already exist then it will truncate the existing text file length to zero and write to it.If the user
+put '>>' two greater than sign then it will create a new file if file does not exist already. If the file already exist then it will append
+the output to the existing file.
+ [command] > [file Name]
+ [command] >> [file Name]
+.IP INPUT_REDIRECTION
+The user can pass input for a executable or a command from a text file.If the file that user passing doesn't exist user will get the error
+message.
+ [command] < [file name]
+.IP INPUT_AND_OUTPUT_REDIRECTION:
+The user can pass input from a text file. And output of that command can be redirect into a new text file. The file that passing input to
+command line should exist. If it does not exist the user will get error message. Also if the user pass single greater than sign '>', the
+shell will create a new file or overwrite an existing file. If the user pass two greater than sign '>>', the shell will either create a
+new file it the file does not exist already. If the file already exist it will append the content to the existing file.
+ [command] < [file name 1] > [file Name 2]
+ [command] < [file name 1] >> [file Name 2]
+.SH Piping
+The user can run execute two commands at the same time [command 1] | [command 2]. Also user can run executable files and non-built-in commands
+using piping.
+.SH NON-BUILT COMMAND
+User can use all the regular non-built-in commands that Linux system supports.
+.SH BATCH FILE
+User can pass a batch file with shell executable. If the batch file does not have the executable permission. The shell will change the permission
+and read the commands in the batch file. If the file does not exist it will print the error message.
+.SH BACKGROUND OPERATION
+User can run a run background process in this shell. Background process will not work with redirection.
+ [command] &
+.SH PATH NAME
+It shows the the current directory that user working. It will change if user go the different directories.
+.SH AUTHOR
+Written by Jacob Chacko Kurian.
